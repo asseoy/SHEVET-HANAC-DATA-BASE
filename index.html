@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>שבט הנשיא — הארכיון</title>
+  <meta name="description" content="האנציקלופדיה הדיגיטלית של שבט הנשיא — שכבות, מסורות, משחקים, מחנאות, הדרכה, סמלים, מורלים וארכיון." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#home"><img src="assets/logo.png" alt="סמל שבט הנשיא"><span>שבט הנשיא</span></a>
+    <nav>
+      <a href="#generations">שכבות</a><a href="#archive">המאגר</a><a href="#history">היסטוריה</a><a href="#games">משחקים</a><a href="#symbols">סמלים</a>
+    </nav>
+    <button id="menuBtn" class="menu">☰</button>
+  </header>
+
+  <main id="home">
+    <section class="hero section-pad">
+      <div class="hero-copy">
+        <span class="eyebrow">NA-C · DIGITAL ARCHIVE</span>
+        <h1>כל הנשיא.<br><em>במקום אחד.</em></h1>
+        <p>שכבות, חיות, מסורות, עובדות, מחנאות, הדרכה, משחקים, סמלים, מורלים והיסטוריה — מתוך מאגר השבט.</p>
+        <div class="hero-actions"><a class="btn primary" href="#games">יאללה משחקים</a><a class="btn ghost" href="#archive">פתח את המאגר</a></div>
+        <div class="stats" id="stats"></div>
+      </div>
+      <div class="hero-art">
+        <img class="hero-logo" src="assets/logo.png" alt="סמל צבעוני שבט הנשיא">
+        <img class="outline" src="assets/outline.png" alt="מיתאר שבט הנשיא">
+        <span class="orbit o1">1953</span><span class="orbit o2">אדום × שחור</span><span class="orbit o3">מחנאות</span>
+      </div>
+    </section>
+
+    <section class="ticker"><div>שכבות ✦ חיות ✦ מסורות ✦ מחנאות ✦ הדרכה ✦ גלופות ✦ מורלים ✦ ג׳ינגלים ✦ Hall of Fame ✦</div></section>
+
+    <section id="generations" class="section-pad">
+      <div class="section-head"><div><span class="eyebrow">GENERATIONS</span><h2>שכבות הנשיא</h2></div><p>חיפוש לפי שם שכבה, שנה או חיה. לחיצה פותחת כרטיס מלא בתוך האתר.</p></div>
+      <div class="toolbar"><input id="generationSearch" placeholder="חפש: רותם / כריש / 2026..."><select id="generationEra"><option value="all">כל השנים</option><option value="2020">2020+</option><option value="2010">2010–2019</option><option value="2000">2000–2009</option><option value="old">לפני 2000</option></select></div>
+      <div class="generation-grid" id="generationGrid"></div>
+    </section>
+
+    <section id="archive" class="section-pad alt">
+      <div class="section-head"><div><span class="eyebrow">THE VAULT</span><h2>המאגר</h2></div><p>לא קישורים ל-Drive — מבנה המאגר מוצג כאן כחלק מהאתר, ומאפשר לנו להרחיב כל קטגוריה לתוכן מלא.</p></div>
+      <div class="archive-grid" id="archiveGrid"></div>
+    </section>
+
+    <section id="history" class="section-pad">
+      <div class="section-head"><div><span class="eyebrow">SINCE 1953</span><h2>היסטוריה ועובדות</h2></div><p>אירועים, מסורות וסיפורים שנשמרו במאגר.</p></div>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section id="traditions" class="section-pad alt">
+      <div class="section-head"><div><span class="eyebrow">TRADITIONS</span><h2>מסורות הנשיא</h2></div><p>כרטיסים קצרים לקריאה בתוך האתר.</p></div>
+      <div class="tradition-grid" id="traditionsGrid"></div>
+    </section>
+
+    <section id="games" class="section-pad games-zone">
+      <div class="section-head"><div><span class="eyebrow">PLAY NA-C</span><h2>משחקי הנשיא</h2></div><p>כל המשחקים משתמשים בנתוני המאגר.</p></div>
+      <div class="game-hud"><div><span>ניקוד</span><b id="score">0</b></div><div><span>רצף</span><b id="streak">0</b></div><div><span>שאלה</span><b id="round">1</b></div></div>
+      <div class="game-tabs"><button data-game="mix" class="active">⚡ מיקס הנשיא</button><button data-game="animal">חיה ↔ שכבה</button><button data-game="year">שכבה ↔ שנה</button><button data-game="timeline">סדר כרונולוגי</button><button data-game="fact">אמת או חרטא</button><button data-game="odd">מי לא שייך?</button><button data-game="speed">ספיד ראונד</button></div>
+      <div id="gameBox" class="game-box"></div>
+    </section>
+
+    <section id="activities" class="section-pad alt">
+      <div class="section-head"><div><span class="eyebrow">ACTIVITY BANK</span><h2>רעיונות להפעלות</h2></div><p>טעימה ממאגר ההפעלות; כל רעיון נפתח ונשאר בתוך האתר.</p></div>
+      <div class="activity-grid" id="activityGrid"></div>
+    </section>
+
+    <section id="symbols" class="section-pad">
+      <div class="section-head"><div><span class="eyebrow">IDENTITY</span><h2>שפת הנשיא</h2></div><p>הסמל הצבעוני והמיתאר המקוריים משמשים את המיתוג של האתר.</p></div>
+      <div class="symbol-stage"><img src="assets/logo.png" alt="סמל צבעוני"><img src="assets/outline.png" alt="מיתאר"><div><h3>אדום. שחור. הנשיא.</h3><p>צבעי השבט שונו לאדום ושחור בשנת 1993. לפי מסמכי המאגר, החיה המזוהה עם השבט היא השור, שמקורה בשכבת אורן 2010.</p></div></div>
+    </section>
+  </main>
+
+  <dialog id="modal"><button id="closeModal" class="close">×</button><div id="modalContent"></div></dialog>
+  <footer><img src="assets/logo.png" alt=""><div><b>שבט הנשיא — הארכיון</b><span>נבנה מתוך מאגר השבט · RTL · Mobile Ready</span><span class="creator">יוצר: איתן אסיאו</span></div></footer>
+  <script src="app.js"></script>
+</body>
+</html>
