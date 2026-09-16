@@ -18,3 +18,7 @@
 
 ## Content pass
 Expanded archive content from readable Drive documents and verified crawl metadata. Sensitive/private material and patches are excluded.
+
+
+## עדכון מתקנים
+נוסף ארכיון מתקנים 2003–2026 מתוך הקובץ שסופק, יחד עם ארבעה מצבי משחק ייעודיים למתקנים.

@@ -12,7 +12,7 @@
   <header class="topbar">
     <a class="brand" href="#home"><img src="assets/logo.png" alt="סמל שבט הנשיא"><span>שבט הנשיא</span></a>
     <nav>
-      <a href="#discover">גילוי</a><a href="#archive">המאגר</a><a href="#history">היסטוריה</a><a href="#games">משחקים</a>
+      <a href="#discover">גילוי</a><a href="#facilityHistory">מתקנים</a><a href="#history">היסטוריה</a><a href="#games">משחקים</a>
     </nav>
     <button id="menuBtn" class="menu">☰</button>
   </header>
@@ -71,11 +71,18 @@
     </section>
 
     <section id="games" class="section-pad games-zone">
-      <div class="section-head"><div><span class="eyebrow">PLAY NA-C</span><h2>משחקי הנשיא</h2></div><p>טריוויה אמיתית מתוך המאגר — בחירה, ציר זמן, Hall of Fame, ספיד והקלדת תשובות בלי רמזים.</p></div>
+      <div class="section-head"><div><span class="eyebrow">PLAY NA-C</span><h2>משחקי הנשיא</h2></div><p>טריוויה אמיתית מתוך המאגר — ועכשיו גם ארקייד מתקנים שלם: שנים, הקלדה, ספיד ושרשרת מתקנים.</p></div>
       <div class="game-level-wrap"><span>בחרו רמת קושי</span><div class="difficulty-tabs" id="difficultyTabs"><button data-level="easy">קליל</button><button data-level="medium" class="active">שכב״ג</button><button data-level="hard">אגדה</button></div><small id="difficultyHint">4 תשובות · 10 שאלות · ניקוד רגיל</small></div>
       <div class="game-hud"><div><span>ניקוד</span><b id="score">0</b></div><div><span>רצף</span><b id="streak">0</b></div><div><span>שאלה</span><b id="round">1</b></div><div><span>רמה</span><b id="levelHud">שכב״ג</b></div></div>
-      <div class="game-tabs"><button data-game="mix" class="active">⚡ מיקס הנשיא</button><button data-game="animal">חיה ↔ שכבה</button><button data-game="year">שכבה ↔ שנה</button><button data-game="timeline">סדר כרונולוגי</button><button data-game="fact">אמת או חרטא</button><button data-game="hall">🏆 Hall of Fame</button><button data-game="odd">מי לא שייך?</button><button data-game="speed">⏱ ספיד ראונד</button><button data-game="type">⌨️ כתוב את התשובה</button></div>
+      <div class="game-tabs"><button data-game="mix" class="active">⚡ מיקס הנשיא</button><button data-game="animal">חיה ↔ שכבה</button><button data-game="year">שכבה ↔ שנה</button><button data-game="timeline">סדר כרונולוגי</button><button data-game="fact">אמת או חרטא</button><button data-game="hall">🏆 Hall of Fame</button><button data-game="odd">מי לא שייך?</button><button data-game="speed">⏱ ספיד ראונד</button><button data-game="type">⌨️ כתוב את התשובה</button><button data-game="facility">🏗️ מתקן ↔ שנה</button><button data-game="facilitytype">✍️ מי זוכר מתקן?</button><button data-game="facilityrush">🚧 מתקן ראונד</button><button data-game="facilitychain">🔗 שרשרת מתקנים</button></div>
       <div id="gameBox" class="game-box"></div>
+    </section>
+
+
+    <section id="facilityHistory" class="section-pad facility-zone">
+      <div class="section-head"><div><span class="eyebrow">2003—2026 · CAMPING LEGACY</span><h2>מתקני הנשיא לאורך השנים</h2></div><p>ארכיון מסודר של שמות המתקנים מהמאגר החדש — שנה אחרי שנה. לחצו על שנה כדי לפתוח את כל המתקנים שלה.</p></div>
+      <div class="facility-stats" id="facilityStats"></div>
+      <div class="facility-years" id="facilityYears"></div>
     </section>
 
     <section id="activities" class="section-pad alt">
