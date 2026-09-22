@@ -1093,6 +1093,16 @@ function best(key,val){const b=store.get('best:'+key,null);if(val==null) return 
 renderXP();
 const LOGO_IMG=new Image();LOGO_IMG.src=LOGO_SRC;
 
+/* scale a game canvas's backing store to the device's pixel ratio so text and
+   thin lines stay crisp; callers keep drawing in the logical w×h space */
+function hiDPI(cv,w,h){
+  const dpr=Math.min(3,window.devicePixelRatio||1);
+  cv.width=w*dpr;cv.height=h*dpr;
+  const ctx=cv.getContext('2d');
+  ctx.scale(dpr,dpr);
+  return ctx;
+}
+
 /* a countdown bar that calls onEnd; returns {stop, left()} */
 function countdown(barEl,secs,onEnd,onTick){
   let raf,t0=performance.now(),stopped=false;
@@ -1233,7 +1243,7 @@ function towerPlay(stage,lvl,ctl){
      <p style="margin:1rem 0 0;font-size:.95rem;color:#8d867e">השיא שלכם ברמה הזו: <span id="twBest">${ctl.getBest()??0}</span> מ׳</p>
    </div></div>`;
   ctl.wire(stage);
-  const cv=stage.querySelector('canvas'),ctx=cv.getContext('2d'),over=stage.querySelector('.tw-over');
+  const cv=stage.querySelector('canvas'),ctx=hiDPI(cv,480,680),over=stage.querySelector('.tw-over');
   const W=480,H=680,BH=32,MPB=.5,GROUND=H-70;
   let blocks,cur,falling,cam,camT,combo,dead,deadT,raf,t0,passed,particles,endT;
   const stars=Array.from({length:80},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+.4}));
@@ -1688,7 +1698,7 @@ function racePlay(stage,lvl,ctl){
      <p style="margin:1rem 0 0;font-size:.95rem;color:#8d867e">השיא שלכם ברמה הזו: <span id="rcBest">${ctl.getBest()??0}</span> מ׳</p>
    </div></div>`;
   ctl.wire(stage);
-  const cv=stage.querySelector('canvas'),ctx=cv.getContext('2d'),over=stage.querySelector('.tw-over');
+  const cv=stage.querySelector('canvas'),ctx=hiDPI(cv,W,H),over=stage.querySelector('.tw-over');
   let lane,carX,items,dist,speed,lives,dead,deadT,raf,t0,invuln,nextGap,gapAcc,collected,factAt,facts,particles,pDown;
   function reset(){
     lane=1;carX=laneX(1);items=[];dist=0;speed=C.spd0;lives=C.lives;dead=false;invuln=0;
