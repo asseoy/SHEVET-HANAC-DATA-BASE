@@ -1679,9 +1679,9 @@ function blitzPlay(stage,lvl,ctl){
 
 /* ================= GAME: RACE ================= */
 function racePlay(stage,lvl,ctl){
-  const C={easy:{spd0:2.4,spdMax:6.5,acc:.00045,lives:3,gap0:920,gapMin:560,gapShrink:1.6,dbl:0},
-           mid:{spd0:3.1,spdMax:8.8,acc:.0007,lives:2,gap0:760,gapMin:430,gapShrink:2.1,dbl:.12},
-           hard:{spd0:4,spdMax:11.5,acc:.0011,lives:1,gap0:620,gapMin:320,gapShrink:2.6,dbl:.26}}[lvl];
+  const C={easy:{spd0:2.2,spdMax:6,acc:.0005,lives:3,gap0:980,gapMin:600,gapShrink:1.6,dbl:0,dblAt:1e9},
+           mid:{spd0:3.4,spdMax:9,acc:.0009,lives:2,gap0:700,gapMin:380,gapShrink:2.3,dbl:.16,dblAt:90},
+           hard:{spd0:4.8,spdMax:13,acc:.0016,lives:1,gap0:480,gapMin:250,gapShrink:3.2,dbl:.35,dblAt:25}}[lvl];
   const W=480,H=680,ROAD_W=300,ROAD_X=(W-ROAD_W)/2,LANE_W=ROAD_W/3,CAR_Y=H-146,CAR_W=52,CAR_H=84;
   const laneX=l=>ROAD_X+LANE_W*(l+.5);
   const TYPE_COLOR={'שער':'#F3E03B','תורן':'#FD1D1D','מחסן':'#5E9B2E','מנגנון':'#4b7fc4','חופשי':'#fff'};
@@ -1712,7 +1712,7 @@ function racePlay(stage,lvl,ctl){
   function mkObst(l){return {kind:'obst',lane:l,y:-60,f:pick(OBST_POOL)}}
   function mkGood(l){const [n,em]=pick(ANIMALS);return {kind:'good',lane:l,y:-60,n,em}}
   function spawn(){
-    if(Math.random()<C.dbl&&dist>150){
+    if(Math.random()<C.dbl&&dist>C.dblAt){
       const free=Math.floor(Math.random()*3);
       [0,1,2].filter(l=>l!==free).forEach(l=>items.push(mkObst(l)));
     }else if(Math.random()<.72){
